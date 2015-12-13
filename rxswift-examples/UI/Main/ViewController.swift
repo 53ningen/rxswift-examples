@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     private var disposeBag: DisposeBag = DisposeBag()
     
     @IBOutlet weak var buttonSampleButton: UIButton!
+    @IBOutlet weak var textFieldSampleButton: UIButton!
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -22,8 +23,14 @@ class ViewController: UIViewController {
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             .addDisposableTo(disposeBag)
+        textFieldSampleButton.rx_tap
+            .subscribeNext {
+                let vc: TextFieldSampleViewController = Storyboard.getViewController(.TextFieldSample)
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            .addDisposableTo(disposeBag)
     }
-        
+    
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         disposeBag = DisposeBag()
