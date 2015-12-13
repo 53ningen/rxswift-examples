@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9058" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="l6M-RY-o8x">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9048"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Button Sample View Controller-->
+        <scene sceneID="d5G-As-b43">
+            <objects>
+                <viewController storyboardIdentifier="ButtonSample" id="l6M-RY-o8x" customClass="ButtonSampleViewController" customModule="rxswift_examples" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q0s-ke-aOq"/>
+                        <viewControllerLayoutGuide type="bottom" id="7je-Jo-1sI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lam-cA-ldw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4L-1H-lTz">
+                                <rect key="frame" x="30" y="50" width="540" height="27"/>
+                                <color key="backgroundColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="15"/>
+                                <state key="normal" title="チマメ隊ボタン"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="q4L-1H-lTz" firstAttribute="leading" secondItem="lam-cA-ldw" secondAttribute="leadingMargin" constant="10" id="1vY-b5-N0O"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="q4L-1H-lTz" secondAttribute="trailing" constant="10" id="UrB-2f-aF6"/>
+                            <constraint firstItem="q4L-1H-lTz" firstAttribute="top" secondItem="Q0s-ke-aOq" secondAttribute="bottom" constant="30" id="Zll-5S-7M6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="q4L-1H-lTz" id="fG9-uE-Dkr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8vN-fh-aDq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="873" y="422"/>
+        </scene>
+    </scenes>
+</document>
