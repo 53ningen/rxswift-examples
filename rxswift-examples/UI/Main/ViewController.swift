@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var buttonSampleButton: UIButton!
     @IBOutlet weak var textFieldSampleButton: UIButton!
+    @IBOutlet weak var sliderSampleButton: UIButton!
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -26,6 +27,12 @@ class ViewController: UIViewController {
         textFieldSampleButton.rx_tap
             .subscribeNext {
                 let vc: TextFieldSampleViewController = Storyboard.getViewController(.TextFieldSample)
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            .addDisposableTo(disposeBag)
+        sliderSampleButton.rx_tap
+            .subscribeNext {
+                let vc: SliderSampleViewController = Storyboard.getViewController(.SliderSample)
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             .addDisposableTo(disposeBag)
