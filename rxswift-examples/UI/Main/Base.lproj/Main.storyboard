@@ -25,12 +25,18 @@
                                 <rect key="frame" x="242" y="134" width="117" height="30"/>
                                 <state key="normal" title="TextField Sample"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="if1-No-Tib">
+                                <rect key="frame" x="253" y="174" width="95" height="30"/>
+                                <state key="normal" title="Slider Sample"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="if1-No-Tib" firstAttribute="top" secondItem="1IM-8q-acv" secondAttribute="bottom" constant="10" id="6qp-f0-C7W"/>
                             <constraint firstItem="1IM-8q-acv" firstAttribute="top" secondItem="Cxm-lT-jM7" secondAttribute="bottom" constant="10" id="BUt-Sl-AtN"/>
                             <constraint firstItem="Cxm-lT-jM7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="Xte-NP-cRC"/>
                             <constraint firstItem="1IM-8q-acv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZAp-EQ-z0H"/>
+                            <constraint firstItem="if1-No-Tib" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bHb-aT-xDr"/>
                             <constraint firstItem="Cxm-lT-jM7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nQH-t0-7Xn"/>
                         </constraints>
                     </view>
@@ -38,6 +44,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="buttonSampleButton" destination="Cxm-lT-jM7" id="6lf-IV-aWk"/>
+                        <outlet property="sliderSampleButton" destination="if1-No-Tib" id="Biy-zC-kFZ"/>
                         <outlet property="textFieldSampleButton" destination="1IM-8q-acv" id="ARg-Mh-tES"/>
                     </connections>
                 </viewController>
