@@ -34,7 +34,7 @@ public class DefaultRxHttpClient: RxHttpClient {
         if let request = RxHttpUtils.createRequest(method, url: url, params: parameters, headers: headers, timeoutSec: timeoutSec ?? defaultTimeoutSec) {
             return NSURLSession.sharedSession().rx_response(request)
         } else {
-            return failWith(NSError(domain: "RxHttp", code: 1, userInfo: nil))
+            return Observable.error(NSError(domain: "RxHttp", code: 1, userInfo: nil))
         }
     }
     
