@@ -20,7 +20,7 @@ class SliderSampleViewController: UIViewController {
             .map {
                 NSAttributedString(
                     string: "特殊相対性理論",
-                    attributes: [NSFontAttributeName: UIFont(name: "HiraginoSans-W3", size: CGFloat($0))!]
+                    attributes: [NSFontAttributeName: UIFont(name: "Hiragino Kaku Gothic ProN", size: CGFloat($0))!]
                 )
             }
             .bindTo(label.rx_attributedText)
