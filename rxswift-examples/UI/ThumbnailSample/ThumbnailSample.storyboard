@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5Ce-Jn-YWQ">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Thumbnail Sample View Controller-->
+        <scene sceneID="wkK-t9-kBD">
+            <objects>
+                <viewController id="5Ce-Jn-YWQ" customClass="ThumbnailSampleViewController" customModule="rxswift_examples" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3hs-11-WlJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wPv-bg-mBH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OHz-R8-KLL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ddh-8m-qwc">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ddh-8m-qwc" secondAttribute="trailing" id="6J2-lC-BPg"/>
+                            <constraint firstItem="ddh-8m-qwc" firstAttribute="leading" secondItem="OHz-R8-KLL" secondAttribute="leading" id="EcL-d5-iwc"/>
+                            <constraint firstItem="wPv-bg-mBH" firstAttribute="top" secondItem="ddh-8m-qwc" secondAttribute="bottom" id="M6A-mr-6PS"/>
+                            <constraint firstItem="ddh-8m-qwc" firstAttribute="top" secondItem="3hs-11-WlJ" secondAttribute="bottom" id="QyA-50-o5z"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="xER-gW-LgI"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="tableView" destination="ddh-8m-qwc" id="MJq-HO-J3k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7C8-tm-d2W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="844" y="391"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="edP-ch-7Ga">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="edP-ch-7Ga">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--RxSwift Samples-->
@@ -29,6 +29,10 @@
                                 <rect key="frame" x="253" y="174" width="95" height="30"/>
                                 <state key="normal" title="Slider Sample"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxq-qY-NcR">
+                                <rect key="frame" x="237" y="214" width="127" height="30"/>
+                                <state key="normal" title="Thumbnail Sample"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -38,6 +42,8 @@
                             <constraint firstItem="1IM-8q-acv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZAp-EQ-z0H"/>
                             <constraint firstItem="if1-No-Tib" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bHb-aT-xDr"/>
                             <constraint firstItem="Cxm-lT-jM7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nQH-t0-7Xn"/>
+                            <constraint firstItem="sxq-qY-NcR" firstAttribute="top" secondItem="if1-No-Tib" secondAttribute="bottom" constant="10" id="oMw-V2-RrT"/>
+                            <constraint firstItem="sxq-qY-NcR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zkM-5a-RBO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="RxSwift Samples" id="WX7-Af-giR"/>
@@ -46,6 +52,7 @@
                         <outlet property="buttonSampleButton" destination="Cxm-lT-jM7" id="6lf-IV-aWk"/>
                         <outlet property="sliderSampleButton" destination="if1-No-Tib" id="Biy-zC-kFZ"/>
                         <outlet property="textFieldSampleButton" destination="1IM-8q-acv" id="ARg-Mh-tES"/>
+                        <outlet property="thumbnailSampleButton" destination="sxq-qY-NcR" id="Arg-NX-U5d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
