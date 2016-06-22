@@ -17,6 +17,9 @@
 		FF7F4A171C1DFA5300A84CBE /* SliderSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7F4A161C1DFA5300A84CBE /* SliderSampleViewController.swift */; };
 		FFAAA46A1D1B054200B52537 /* ThumbnailSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAAA4691D1B054200B52537 /* ThumbnailSampleViewController.swift */; };
 		FFAAA46C1D1B056200B52537 /* ThumbnailSample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAAA46B1D1B056200B52537 /* ThumbnailSample.storyboard */; };
+		FFAAA46E1D1B081600B52537 /* ThumbnailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFAAA46D1D1B081600B52537 /* ThumbnailCell.xib */; };
+		FFAAA4701D1B091800B52537 /* ThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAAA46F1D1B091800B52537 /* ThumbnailCell.swift */; };
+		FFAAA4721D1B0B7E00B52537 /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAAA4711D1B0B7E00B52537 /* UIUtils.swift */; };
 		FFB245821C1DDCF7003AA3BE /* ButtonSample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB245811C1DDCF7003AA3BE /* ButtonSample.storyboard */; };
 		FFB245841C1DDD97003AA3BE /* ButtonSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB245831C1DDD97003AA3BE /* ButtonSampleViewController.swift */; };
 		FFB245861C1DE381003AA3BE /* StoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB245851C1DE381003AA3BE /* StoryBoard.swift */; };
@@ -55,6 +58,9 @@
 		FF7F4A161C1DFA5300A84CBE /* SliderSampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderSampleViewController.swift; sourceTree = "<group>"; };
 		FFAAA4691D1B054200B52537 /* ThumbnailSampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailSampleViewController.swift; sourceTree = "<group>"; };
 		FFAAA46B1D1B056200B52537 /* ThumbnailSample.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ThumbnailSample.storyboard; sourceTree = "<group>"; };
+		FFAAA46D1D1B081600B52537 /* ThumbnailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThumbnailCell.xib; sourceTree = "<group>"; };
+		FFAAA46F1D1B091800B52537 /* ThumbnailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailCell.swift; sourceTree = "<group>"; };
+		FFAAA4711D1B0B7E00B52537 /* UIUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUtils.swift; sourceTree = "<group>"; };
 		FFB245811C1DDCF7003AA3BE /* ButtonSample.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ButtonSample.storyboard; sourceTree = "<group>"; };
 		FFB245831C1DDD97003AA3BE /* ButtonSampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonSampleViewController.swift; sourceTree = "<group>"; };
 		FFB245851C1DE381003AA3BE /* StoryBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryBoard.swift; sourceTree = "<group>"; };
@@ -131,6 +137,7 @@
 				FFD1D0C71C032D9500FDA882 /* Assets.xcassets */,
 				FFD1D0C91C032D9500FDA882 /* LaunchScreen.storyboard */,
 				FFB245851C1DE381003AA3BE /* StoryBoard.swift */,
+				FFAAA4711D1B0B7E00B52537 /* UIUtils.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -182,6 +189,8 @@
 		FFAAA4681D1B04F000B52537 /* ThumbnailSample */ = {
 			isa = PBXGroup;
 			children = (
+				FFAAA46F1D1B091800B52537 /* ThumbnailCell.swift */,
+				FFAAA46D1D1B081600B52537 /* ThumbnailCell.xib */,
 				FFAAA46B1D1B056200B52537 /* ThumbnailSample.storyboard */,
 				FFAAA4691D1B054200B52537 /* ThumbnailSampleViewController.swift */,
 			);
@@ -340,6 +349,7 @@
 				FF7F4A151C1DF99C00A84CBE /* SliderSample.storyboard in Resources */,
 				FFD1D0C81C032D9500FDA882 /* Assets.xcassets in Resources */,
 				FFD1D0C61C032D9500FDA882 /* Main.storyboard in Resources */,
+				FFAAA46E1D1B081600B52537 /* ThumbnailCell.xib in Resources */,
 				FFAAA46C1D1B056200B52537 /* ThumbnailSample.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,12 +461,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFAAA4721D1B0B7E00B52537 /* UIUtils.swift in Sources */,
 				FF7F4A171C1DFA5300A84CBE /* SliderSampleViewController.swift in Sources */,
 				FFD1D0C31C032D9500FDA882 /* ViewController.swift in Sources */,
 				FFB245841C1DDD97003AA3BE /* ButtonSampleViewController.swift in Sources */,
 				FFD1D0C11C032D9500FDA882 /* AppDelegate.swift in Sources */,
 				FF54E4C21C04A78000914A86 /* DefaultRxHttpClient.swift in Sources */,
 				FFAAA46A1D1B054200B52537 /* ThumbnailSampleViewController.swift in Sources */,
+				FFAAA4701D1B091800B52537 /* ThumbnailCell.swift in Sources */,
 				FFB245861C1DE381003AA3BE /* StoryBoard.swift in Sources */,
 				FF54E4C01C04A76900914A86 /* HttpMethod.swift in Sources */,
 				FFB2458B1C1DE8BE003AA3BE /* TextFieldSampleViewController.swift in Sources */,
