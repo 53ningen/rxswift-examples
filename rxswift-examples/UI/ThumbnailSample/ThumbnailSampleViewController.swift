@@ -31,6 +31,8 @@ extension ThumbnailSampleViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithType(ThumbnailCell) ?? ThumbnailCell()
+        cell.disposeBag = DisposeBag()
+        cell.thumbnailImageView.image = nil
         let url = NSURL(string: "https://placeholdit.imgix.net/~text")!
         let params: [RequestParameter] = [("txtsize", "33"), ("txt", indexPath.row.description), ("w", "99"), ("h", "70")]
         httpClient.get(url, parameters: params, headers: nil, timeoutSec: nil)
