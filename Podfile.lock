@@ -1,26 +1,36 @@
 PODS:
-  - Nimble (3.0.0)
-  - Quick (0.8.0)
-  - RxBlocking (2.6.0):
-    - RxSwift (~> 2.5)
-  - RxCocoa (2.6.0):
-    - RxSwift (~> 2.5)
-  - RxSwift (2.6.0)
+  - Nimble (5.0.0)
+  - Quick (0.9.3)
+  - RxBlocking (3.0.0-beta.1):
+    - RxSwift (~> 3.0.0-beta.1)
+  - RxCocoa (3.0.0-beta.1):
+    - RxSwift (~> 3.0.0-beta.1)
+  - RxSwift (3.0.0-beta.1)
 
 DEPENDENCIES:
-  - Nimble (= 3.0.0)
-  - Quick (= 0.8.0)
-  - RxBlocking (= 2.6.0)
-  - RxCocoa (= 2.6.0)
-  - RxSwift (= 2.6.0)
+  - Nimble (= 5.0.0)
+  - Quick (from `git@github.com:Quick/Quick.git`, branch `swift-3.0`)
+  - RxBlocking (= 3.0.0-beta.1)
+  - RxCocoa (= 3.0.0-beta.1)
+  - RxSwift (= 3.0.0-beta.1)
+
+EXTERNAL SOURCES:
+  Quick:
+    :branch: swift-3.0
+    :git: git@github.com:Quick/Quick.git
+
+CHECKOUT OPTIONS:
+  Quick:
+    :commit: 36ebbc75e093c7553a5145ed5dd21484364cd78d
+    :git: git@github.com:Quick/Quick.git
 
 SPEC CHECKSUMS:
-  Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
-  Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
-  RxBlocking: f2e0a7e74d5e9d3029d2b1118e2af01f583fbdd8
-  RxCocoa: 89ab00d5753502520227940e3a0e0a0413683c6b
-  RxSwift: 77f3a0b15324baa7a1c9bfa9f199648a82424e26
+  Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
+  Quick: 31fb576b6cbb6b028cc5e0016e4366accbb346f5
+  RxBlocking: 422944880fe63b432c459dc87be7c8178dcf45f3
+  RxCocoa: 8cecf331302b8ae5381bbab1bccba4ede2eae6a8
+  RxSwift: 0823e8d7969c23bfa9ddfb2afa4881e424a1a710
 
-PODFILE CHECKSUM: ed7b0b6411ca0b42a003e69d6852adeca9ff0954
+PODFILE CHECKSUM: c1554f6a5c605c794b3b39dd114f7fac4f2c9d86
 
 COCOAPODS: 1.0.1

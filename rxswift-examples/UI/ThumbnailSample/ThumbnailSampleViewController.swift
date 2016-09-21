@@ -10,7 +10,7 @@ import RxSwift
 class ThumbnailSampleViewController: UIViewController {
     
     private var disposeBag: DisposeBag = DisposeBag()
-    private let httpClient: RxHttpClient = DefaultRxHttpClient(defaultTimeoutSec: 10)
+    fileprivate let httpClient: RxHttpClient = DefaultRxHttpClient(defaultTimeoutSec: 10)
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,30 +18,30 @@ class ThumbnailSampleViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.registerNib(ThumbnailCell)
+        tableView.registerNib(ThumbnailCell.self)
     }
     
 }
 
 extension ThumbnailSampleViewController: UITableViewDataSource {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 100
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithType(ThumbnailCell) ?? ThumbnailCell()
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithType(ThumbnailCell.self) ?? ThumbnailCell()
         cell.disposeBag = DisposeBag()
         cell.thumbnailImageView.image = nil
-        let url = NSURL(string: "https://placeholdit.imgix.net/~text")!
-        let params: [RequestParameter] = [("txtsize", "33"), ("txt", indexPath.row.description), ("w", "99"), ("h", "70")]
+        let url = URL(string: "https://placeholdit.imgix.net/~text")!
+        let params: [RequestParameter] = [("txtsize", "33"), ("txt", (indexPath as NSIndexPath).row.description), ("w", "99"), ("h", "70")]
         httpClient.get(url, parameters: params, headers: nil, timeoutSec: nil)
             .observeOn(MainScheduler.instance)
             .subscribe({ (event) in
                 switch event {
-                case .Next(let element):
-                    cell.thumbnailImageView.rx_image.onNext(UIImage(data: element.0))
-                case .Error(let e as NSError):
+                case .next(let element):
+                    cell.thumbnailImageView.rx.image.onNext(UIImage(data: element.0 as Data))
+                case .error(let e as NSError):
                     NSLog(e.localizedDescription)
                 default: break
                 }
@@ -54,20 +54,20 @@ extension ThumbnailSampleViewController: UITableViewDataSource {
 
 extension ThumbnailSampleViewController: UITableViewDelegate {
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 1
     }
     
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 1
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }

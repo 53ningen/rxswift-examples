@@ -13,14 +13,14 @@ class ButtonSampleViewController: UIViewController {
     private var disposeBag: DisposeBag = DisposeBag()
     @IBOutlet weak var button: UIButton!
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        button.rx_tap
+        button.rx.tap
             .subscribe(onNext: { NSLog("チマメ隊") })
             .addDisposableTo(disposeBag)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         disposeBag = DisposeBag()
     }

@@ -2,37 +2,37 @@ import RxSwift
 import RxCocoa
 import Foundation
 
-public class DefaultRxHttpClient: RxHttpClient {
+class DefaultRxHttpClient: RxHttpClient {
     
-    private let defaultTimeoutSec: NSTimeInterval
+    private let defaultTimeoutSec: TimeInterval
     
-    public init(defaultTimeoutSec: NSTimeInterval) {
+    init(defaultTimeoutSec: TimeInterval) {
         self.defaultTimeoutSec = defaultTimeoutSec
     }
     
-    public func get(url: NSURL, parameters: [RequestParameter]?, headers: [RequestHeader]?, timeoutSec: NSTimeInterval? = nil) -> Observable<(NSData, NSHTTPURLResponse)> {
+    func get(_ url: URL, parameters: [RequestParameter]?, headers: [RequestHeader]?, timeoutSec: TimeInterval?) -> Observable<(Data, HTTPURLResponse)> {
         return action(.GET, url: url, parameters: parameters, headers: headers, timeoutSec: timeoutSec)
     }
     
-    public func post(url: NSURL, parameters: [RequestParameter]?, headers: [RequestHeader]?, timeoutSec: NSTimeInterval? = nil) -> Observable<(NSData, NSHTTPURLResponse)> {
+    func post(_ url: URL, parameters: [RequestParameter]?, headers: [RequestHeader]?, timeoutSec: TimeInterval? = nil) -> Observable<(Data, HTTPURLResponse)> {
         return action(.POST, url: url, parameters: parameters, headers: headers, timeoutSec: timeoutSec)
     }
     
-    public func put(url: NSURL, parameters: [RequestParameter]?, headers: [RequestHeader]?, timeoutSec: NSTimeInterval? = nil) -> Observable<(NSData, NSHTTPURLResponse)> {
+    func put(_ url: URL, parameters: [RequestParameter]?, headers: [RequestHeader]?, timeoutSec: TimeInterval? = nil) -> Observable<(Data, HTTPURLResponse)> {
         return action(.PUT, url: url, parameters: parameters, headers: headers, timeoutSec: timeoutSec)
     }
     
-    public func delete(url: NSURL, parameters: [RequestParameter]?, headers: [RequestHeader]?, timeoutSec: NSTimeInterval? = nil) -> Observable<(NSData, NSHTTPURLResponse)> {
+    func delete(_ url: URL, parameters: [RequestParameter]?, headers: [RequestHeader]?, timeoutSec: TimeInterval? = nil) -> Observable<(Data, HTTPURLResponse)> {
         return action(.DELETE, url: url, parameters: parameters, headers: headers, timeoutSec: timeoutSec)
     }
     
-    public func execute(method: HttpMethod, url: NSURL, parameters: [RequestParameter]?, headers: [RequestHeader]?, timeoutSec: NSTimeInterval?) -> Observable<(NSData, NSHTTPURLResponse)> {
+    func execute(_ method: HttpMethod, url: URL, parameters: [RequestParameter]?, headers: [RequestHeader]?, timeoutSec: TimeInterval?) -> Observable<(Data, HTTPURLResponse)> {
         return action(method, url: url, parameters: parameters, headers: headers, timeoutSec: timeoutSec)
     }
     
-    private func action(method: HttpMethod, url: NSURL, parameters: [RequestParameter]?, headers: [RequestHeader]?, timeoutSec: NSTimeInterval?) -> Observable<(NSData, NSHTTPURLResponse)> {
-        if let request = RxHttpUtils.createRequest(method, url: url, params: parameters, headers: headers, timeoutSec: timeoutSec ?? defaultTimeoutSec) {
-            return NSURLSession.sharedSession().rx_response(request)
+    private func action(_ method: HttpMethod, url: URL, parameters: [RequestParameter]?, headers: [RequestHeader]?, timeoutSec: TimeInterval?) -> Observable<(Data, HTTPURLResponse)> {
+        if let request = RxHttpUtils.createRequest(method, url: url as URL, params: parameters, headers: headers, timeoutSec: timeoutSec ?? defaultTimeoutSec) {
+            return URLSession.shared.rx.response(request)
         } else {
             return Observable.error(NSError(domain: "RxHttp", code: 1, userInfo: nil))
         }

@@ -15,8 +15,8 @@ internal enum Storyboard: String {
     case SliderSample = "SliderSample"
     case ThumbnailSample = "ThumbnailSample"
     
-    internal static func getViewController<T: UIViewController>(storyboardId: Storyboard) -> T {
-        let storyBoard = UIStoryboard(name: storyboardId.rawValue, bundle: NSBundle.mainBundle())
+    internal static func getViewController<T: UIViewController>(_ storyboardId: Storyboard) -> T {
+        let storyBoard = UIStoryboard(name: storyboardId.rawValue, bundle: Bundle.main)
         return storyBoard.instantiateInitialViewController() as! T
     }
     
