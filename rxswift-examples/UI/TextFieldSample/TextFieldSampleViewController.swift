@@ -18,7 +18,7 @@ class TextFieldSampleViewController: UIViewController {
         textField.rx_text
             //.filter { $0 == "ココア" }
             .map { "はぁ... " + $0 + "さん..."}
-            .subscribeNext { NSLog($0) }
+            .subscribe(onNext: { NSLog($0) })
             .addDisposableTo(disposeBag)
     }
     

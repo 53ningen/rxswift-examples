@@ -20,28 +20,28 @@ class ViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         buttonSampleButton.rx_tap
-            .subscribeNext {
+            .subscribe(onNext: {
                 let vc: ButtonSampleViewController = Storyboard.getViewController(.ButtonSample)
                 self.navigationController?.pushViewController(vc, animated: true)
-            }
+            })
             .addDisposableTo(disposeBag)
         textFieldSampleButton.rx_tap
-            .subscribeNext {
+            .subscribe(onNext: {
                 let vc: TextFieldSampleViewController = Storyboard.getViewController(.TextFieldSample)
                 self.navigationController?.pushViewController(vc, animated: true)
-            }
+            })
             .addDisposableTo(disposeBag)
         sliderSampleButton.rx_tap
-            .subscribeNext {
+            .subscribe(onNext: {
                 let vc: SliderSampleViewController = Storyboard.getViewController(.SliderSample)
                 self.navigationController?.pushViewController(vc, animated: true)
-            }
+            })
             .addDisposableTo(disposeBag)
         thumbnailSampleButton.rx_tap
-            .subscribeNext {
+            .subscribe(onNext: {
                 let vc: ThumbnailSampleViewController = Storyboard.getViewController(.ThumbnailSample)
                 self.navigationController?.pushViewController(vc, animated: true)
-            }
+            })
             .addDisposableTo(disposeBag)
     }
     
