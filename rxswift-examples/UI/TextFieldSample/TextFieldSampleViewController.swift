@@ -13,16 +13,16 @@ class TextFieldSampleViewController: UIViewController {
     private var disposeBag: DisposeBag = DisposeBag()
     @IBOutlet weak var textField: UITextField!
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        textField.rx_text
+        textField.rx.textInput.text
             //.filter { $0 == "ココア" }
             .map { "はぁ... " + $0 + "さん..."}
             .subscribe(onNext: { NSLog($0) })
             .addDisposableTo(disposeBag)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         disposeBag = DisposeBag()
     }

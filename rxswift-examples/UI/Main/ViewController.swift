@@ -17,27 +17,27 @@ class ViewController: UIViewController {
     @IBOutlet weak var sliderSampleButton: UIButton!
     @IBOutlet weak var thumbnailSampleButton: UIButton!
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        buttonSampleButton.rx_tap
+        buttonSampleButton.rx.tap
             .subscribe(onNext: {
                 let vc: ButtonSampleViewController = Storyboard.getViewController(.ButtonSample)
                 self.navigationController?.pushViewController(vc, animated: true)
             })
             .addDisposableTo(disposeBag)
-        textFieldSampleButton.rx_tap
+        textFieldSampleButton.rx.tap
             .subscribe(onNext: {
                 let vc: TextFieldSampleViewController = Storyboard.getViewController(.TextFieldSample)
                 self.navigationController?.pushViewController(vc, animated: true)
             })
             .addDisposableTo(disposeBag)
-        sliderSampleButton.rx_tap
+        sliderSampleButton.rx.tap
             .subscribe(onNext: {
                 let vc: SliderSampleViewController = Storyboard.getViewController(.SliderSample)
                 self.navigationController?.pushViewController(vc, animated: true)
             })
             .addDisposableTo(disposeBag)
-        thumbnailSampleButton.rx_tap
+        thumbnailSampleButton.rx.tap
             .subscribe(onNext: {
                 let vc: ThumbnailSampleViewController = Storyboard.getViewController(.ThumbnailSample)
                 self.navigationController?.pushViewController(vc, animated: true)
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
             .addDisposableTo(disposeBag)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         disposeBag = DisposeBag()
     }

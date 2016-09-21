@@ -14,20 +14,20 @@ class SliderSampleViewController: UIViewController {
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var label: UILabel!
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        slider.rx_value
+        slider.rx.value
             .map {
                 NSAttributedString(
                     string: "特殊相対性理論",
                     attributes: [NSFontAttributeName: UIFont(name: "Hiragino Kaku Gothic ProN", size: CGFloat($0))!]
                 )
             }
-            .bindTo(label.rx_attributedText)
+            .bindTo(label.rx.attributedText)
             .addDisposableTo(disposeBag)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         disposeBag = DisposeBag()
     }
