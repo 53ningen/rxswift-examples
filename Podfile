@@ -14,16 +14,16 @@ target 'rxswift-examples' do
   use_frameworks!
 
   # Pods for rxswift-examples
-  pod 'RxSwift','3.0.0-beta.1'
-  pod 'RxCocoa', '3.0.0-beta.1'
+  pod 'RxSwift','3.0.0'
+  pod 'RxCocoa', '3.0.0'
 
 
   target 'rxswift-examplesTests' do
     inherit! :search_paths
     # Pods for testing
-    pod 'Quick', :git => 'git@github.com:Quick/Quick.git', :branch => 'swift-3.0'
+    pod 'Quick', '0.10.0'
     pod 'Nimble', '5.0.0'
-    pod 'RxBlocking', '3.0.0-beta.1'
+    pod 'RxBlocking', '3.0.0'
   end
 
 end
