@@ -5,16 +5,16 @@ target 'rxswift-examples' do
   use_frameworks!
 
   # Pods for rxswift-examples
-  pod 'RxSwift','3.0.0'
-  pod 'RxCocoa', '3.0.0'
+  pod 'RxSwift','3.2.0'
+  pod 'RxCocoa', '3.2.0'
 
 
   target 'rxswift-examplesTests' do
     inherit! :search_paths
     # Pods for testing
-    pod 'Quick', '0.10.0'
-    pod 'Nimble', '5.0.0'
-    pod 'RxBlocking', '3.0.0'
+    pod 'Quick', '1.1.0'
+    pod 'Nimble', '6.0.1'
+    pod 'RxBlocking', '3.2.0'
   end
 
 end
