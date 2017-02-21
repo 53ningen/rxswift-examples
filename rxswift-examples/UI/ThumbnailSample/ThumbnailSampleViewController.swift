@@ -40,7 +40,7 @@ extension ThumbnailSampleViewController: UITableViewDataSource {
             .subscribe({ (event) in
                 switch event {
                 case .next(let element):
-                    cell.thumbnailImageView.rx.image.onNext(UIImage(data: element.0 as Data))
+                    cell.thumbnailImageView.rx.image.onNext(UIImage(data: element.1 as Data))
                 case .error(let e as NSError):
                     NSLog(e.localizedDescription)
                 default: break
