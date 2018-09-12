@@ -17,7 +17,7 @@ class ButtonSampleViewController: UIViewController {
         super.viewWillAppear(animated)
         button.rx.tap
             .subscribe(onNext: { NSLog("チマメ隊") })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

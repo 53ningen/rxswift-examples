@@ -24,25 +24,25 @@ class ViewController: UIViewController {
                 let vc: ButtonSampleViewController = Storyboard.getViewController(.ButtonSample)
                 self.navigationController?.pushViewController(vc, animated: true)
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
         textFieldSampleButton.rx.tap
             .subscribe(onNext: {
                 let vc: TextFieldSampleViewController = Storyboard.getViewController(.TextFieldSample)
                 self.navigationController?.pushViewController(vc, animated: true)
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
         sliderSampleButton.rx.tap
             .subscribe(onNext: {
                 let vc: SliderSampleViewController = Storyboard.getViewController(.SliderSample)
                 self.navigationController?.pushViewController(vc, animated: true)
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
         thumbnailSampleButton.rx.tap
             .subscribe(onNext: {
                 let vc: ThumbnailSampleViewController = Storyboard.getViewController(.ThumbnailSample)
                 self.navigationController?.pushViewController(vc, animated: true)
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

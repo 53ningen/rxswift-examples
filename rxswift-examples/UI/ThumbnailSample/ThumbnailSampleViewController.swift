@@ -46,7 +46,7 @@ extension ThumbnailSampleViewController: UITableViewDataSource {
                 default: break
                 }
             })
-            .addDisposableTo(cell.disposeBag)
+            .disposed(by: cell.disposeBag)
         return cell
     }
     

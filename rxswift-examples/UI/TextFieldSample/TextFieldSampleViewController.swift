@@ -19,7 +19,7 @@ class TextFieldSampleViewController: UIViewController {
             //.filter { $0 == "ココア" }
             .map { "はぁ... \(String(describing: $0)) さん..." }
             .subscribe(onNext: { NSLog($0) })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
