@@ -20,11 +20,11 @@ class SliderSampleViewController: UIViewController {
             .map {
                 NSAttributedString(
                     string: "特殊相対性理論",
-                    attributes: [NSFontAttributeName: UIFont(name: "Hiragino Kaku Gothic ProN", size: CGFloat($0))!]
+                    attributes: [NSAttributedStringKey.font: UIFont(name: "Hiragino Kaku Gothic ProN", size: CGFloat($0))!]
                 )
             }
             .bind(to: label.rx.attributedText)
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
