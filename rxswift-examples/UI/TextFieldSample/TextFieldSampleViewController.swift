@@ -17,7 +17,7 @@ class TextFieldSampleViewController: UIViewController {
         super.viewWillAppear(animated)
         textField.rx.textInput.text
             //.filter { $0 == "ココア" }
-            .map { "はぁ... \($0) さん..." }
+            .map { "はぁ... \(String(describing: $0)) さん..." }
             .subscribe(onNext: { NSLog($0) })
             .addDisposableTo(disposeBag)
     }

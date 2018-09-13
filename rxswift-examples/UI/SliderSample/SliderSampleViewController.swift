@@ -23,7 +23,7 @@ class SliderSampleViewController: UIViewController {
                     attributes: [NSFontAttributeName: UIFont(name: "Hiragino Kaku Gothic ProN", size: CGFloat($0))!]
                 )
             }
-            .bindTo(label.rx.attributedText)
+            .bind(to: label.rx.attributedText)
             .addDisposableTo(disposeBag)
     }
     
